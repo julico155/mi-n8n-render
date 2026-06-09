@@ -15,21 +15,21 @@ services:
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_EDITOR_BASE_URL
-        value: https://n8n-julio.onrender.com     # ← Cambiar después del deploy
+        value: https://n8n-mxnd.onrender.com
       - key: WEBHOOK_URL
-        value: https://n8n-julio.onrender.com     # ← Cambiar después del deploy
+        value: https://n8n-mxnd.onrender.com
 
-      # Optimizaciones para Free tier (memoria)
+      # Optimizaciones importantes
       - key: NODE_OPTIONS
         value: --max-old-space-size=400
+      - key: EXECUTIONS_MODE
+        value: regular          # ← Cambiado a regular (sin Redis)
+      - key: N8N_DISABLE_PRODUCTION_MAIN_PROCESS
+        value: false
       - key: EXECUTIONS_DATA_PRUNE
         value: true
       - key: EXECUTIONS_DATA_MAX_AGE
         value: 168
-      - key: N8N_DISABLE_PRODUCTION_MAIN_PROCESS
-        value: true
-      - key: EXECUTIONS_MODE
-        value: queue
       - key: TZ
         value: America/La_Paz
 
