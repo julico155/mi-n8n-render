@@ -19,6 +19,10 @@ services:
       - key: WEBHOOK_URL
         value: https://n8n-mxnd.onrender.com
 
+      # Forzar SQLite (esto es clave)
+      - key: DB_TYPE
+        value: sqlite
+
       # Configuración ligera
       - key: EXECUTIONS_MODE
         value: regular
