@@ -19,17 +19,19 @@ services:
       - key: WEBHOOK_URL
         value: https://n8n-mxnd.onrender.com
 
-      # Optimizaciones importantes
-      - key: NODE_OPTIONS
-        value: --max-old-space-size=400
+      # Configuración ligera
       - key: EXECUTIONS_MODE
-        value: regular          # ← Cambiado a regular (sin Redis)
-      - key: N8N_DISABLE_PRODUCTION_MAIN_PROCESS
+        value: regular
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=384
+      - key: N8N_RUNNERS_ENABLED
+        value: false
+      - key: N8N_NATIVE_PYTHON_RUNNER
         value: false
       - key: EXECUTIONS_DATA_PRUNE
         value: true
       - key: EXECUTIONS_DATA_MAX_AGE
-        value: 168
+        value: 72
       - key: TZ
         value: America/La_Paz
 
